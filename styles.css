@@ -1,0 +1,38 @@
+/* Animación para mensajes nuevos */
+@keyframes fadeUp {
+    from { 
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación de typing */
+@keyframes typing {
+    from { clip-path: inset(0 100% 0 0); }
+    to { clip-path: inset(0 0 0 0); }
+}
+
+/* Título centrado */
+h1 {
+    text-align: center;
+    animation: typing 2s steps(30);
+}
+
+/* Mensajes del chat */
+[data-testid="stChatMessage"] {
+    animation: fadeUp 0.3s ease-out;
+}
+
+/* Respuestas del asistente */
+[data-testid="stChatMessage"] .assistant p {
+    animation: typing 1s steps(30);
+}
+
+/* Spinner de carga */
+.stSpinner {
+    animation: fadeUp 0.3s ease-out;
+} 
